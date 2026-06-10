@@ -262,3 +262,240 @@ body {
         font-size: 1.8rem;
     }
 }
+
+/* --- TÍTULOS DE SECCIÓN --- */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    margin: 15px auto 0;
+}
+
+/* --- SECCIÓN PRUEBA SOCIAL --- */
+.social-proof {
+    padding: 80px 20px;
+    background-color: #0c0c0f;
+    /* Un tono sutilmente diferente al fondo principal */
+}
+
+.ticket-card,
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    width: 340px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.ticket-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+}
+
+.sport-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.ufc-tag {
+    background-color: rgba(185, 29, 29, 0.2);
+    color: var(--accent-crimson);
+}
+
+.cycling-tag {
+    background-color: rgba(212, 175, 55, 0.2);
+    color: var(--accent-gold);
+}
+
+.odds {
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.pick-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.ticket-status.win {
+    color: #20b053;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.testimonial-card {
+    border-style: solid;
+    /* Diferenciar el testimonio de los tickets */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stars {
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.client-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+}
+
+/* --- SECCIÓN PREGUNTAS FRECUENTES (Acordeón HTML5 puro) --- */
+.faq-section {
+    padding: 80px 20px;
+    background-color: var(--bg-dark);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    padding: 20px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    cursor: pointer;
+    list-style: none;
+    /* Oculta la flecha por defecto */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+    /* Oculta la flecha en Safari/Chrome antiguos */
+}
+
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary {
+    background-color: rgba(212, 175, 55, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-content {
+    padding: 20px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    animation: fadeInFaq 0.4s ease-out;
+}
+
+@keyframes fadeInFaq {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- FOOTER (Juego Responsable) --- */
+.site-footer {
+    background-color: #050505;
+    padding: 60px 20px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.text-center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.warning-icon {
+    font-size: 2rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.site-footer p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.site-footer .copyright {
+    margin-top: 30px;
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+
+/* --- Ajustes Responsivos Adicionales --- */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .ticket-card,
+    .testimonial-card {
+        width: 100%;
+    }
+
+    .faq-item summary {
+        font-size: 1rem;
+    }
+}
